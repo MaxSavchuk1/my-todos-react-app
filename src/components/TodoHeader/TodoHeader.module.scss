@@ -1,0 +1,14 @@
+@import '../../common/styles/templates';
+
+.headerContainer {
+  @extend %flex-container;
+  background-color: bisque;
+  height: 10%;
+  width: 100%;
+
+  h2 {
+    margin-right: auto;
+    padding-left: 25px;
+    font-weight: bold;
+  }
+}
