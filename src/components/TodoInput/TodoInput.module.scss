@@ -1,0 +1,14 @@
+@import '../../common/styles/templates';
+
+.formContainer {
+  @extend %flex-container;
+  width: 100%;
+
+  .inputContainer {
+    height: 30px;
+  }
+
+  .button {
+    height: 30px;
+  }
+}
