@@ -1,6 +1,7 @@
 import React from 'react';
 
-function TodoList () {
+function TodoList ({ tasks }) {
+  console.log(tasks);
   return <div></div>;
 }
 

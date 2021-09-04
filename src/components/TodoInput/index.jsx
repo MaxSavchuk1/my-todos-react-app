@@ -5,11 +5,12 @@ import { TASK_SCHEMA } from '../../utils/validationSchemas';
 
 const tasksContainer = [];
 
-function TodoInput () {
+function TodoInput ({ getTasks }) {
   const initialValues = { task: '' };
   const submitHandler = ({ task }, formikBag) => {
     tasksContainer.push(task);
-    console.log(tasksContainer);
+    getTasks(tasksContainer);
+    // console.log(tasksContainer);
     formikBag.resetForm();
   };
 
