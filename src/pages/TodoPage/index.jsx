@@ -9,7 +9,7 @@ function TodoPage () {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.todoContainer}>
-        <TodoHeader />
+        <TodoHeader count={tasksList.length} />
         <TodoInput getTasks={setTasksList} />
         <TodoList tasks={tasksList} />
       </div>
