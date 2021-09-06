@@ -7,11 +7,8 @@ import styles from './TodoPage.module.scss';
 function TodoPage () {
   const [tasksList, setTasksList] = useState([]);
 
-  const newTasksList = [];
-
   const getNewTask = task => {
-    newTasksList.push(task);
-    setTasksList([...tasksList, newTasksList]);
+    setTasksList([...tasksList, task]);
   };
 
   return (

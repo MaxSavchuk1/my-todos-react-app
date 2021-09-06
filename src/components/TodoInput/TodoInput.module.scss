@@ -3,12 +3,25 @@
 .formContainer {
   @extend %flex-container;
   width: 100%;
+  margin: 10px 0;
+}
 
-  .inputContainer {
-    height: 30px;
-  }
+.inputContainer {
+  height: 30px;
+  width: 75%;
+}
 
-  .button {
-    height: 30px;
-  }
+.button {
+  height: 30px;
+  width: 20%;
+}
+
+.error {
+  background-color: darksalmon;
+  padding: 10px;
+  border-radius: 6px;
+  opacity: 0.8;
+  position: absolute;
+  z-index: 99;
+  
 }
