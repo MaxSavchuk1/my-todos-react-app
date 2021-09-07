@@ -1,5 +1,5 @@
-const initialState = {};
+const initialState = null;
 
-const todosReducer = (state = initialState, action) => {};
+const todosReducer = (state = initialState, action) => {return state};
 
 export default todosReducer;

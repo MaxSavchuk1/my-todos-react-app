@@ -1,0 +1,12 @@
+.itemsList {
+    width: 100%;
+    padding: 15px;
+
+    li {
+        padding: 5px;
+        margin: 5px 0;
+        border: 1px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
