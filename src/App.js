@@ -1,7 +1,12 @@
 import TodoPage from './pages/TodoPage';
+import { ThemeContext } from './contexts';
 
 function App () {
-  return <TodoPage />;
+  return (
+    <ThemeContext.Provider value={}>
+      <TodoPage />
+    </ThemeContext.Provider>
+  );
 }
 
 export default App;
