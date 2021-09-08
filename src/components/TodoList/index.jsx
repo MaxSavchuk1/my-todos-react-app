@@ -10,17 +10,20 @@ function TodoList ({ tasks, deleteItem }) {
       : (style.textDecoration = 'line-through');
   };
 
-  const mappingTasks = (el, i) => (
-    <li key={i} onClick={taskDone}>
-      {el}
-      <button>
-        <EditIcon fontSize='small' />
-      </button>
-      <button onClick={deleteItem}>
-        <DeleteIcon fontSize='small' />
-      </button>
-    </li>
-  );
+  const mappingTasks = (el, i) => {
+    const deleteTodo = () => deleteItem(i);
+    return (
+      <li key={i} onClick={taskDone}>
+        {el}
+        <button>
+          <EditIcon fontSize='small' />
+        </button>
+        <button onClick={deleteTodo}>
+          <DeleteIcon fontSize='small' />
+        </button>
+      </li>
+    );
+  };
 
   return <ul className={styles.itemsList}>{tasks.map(mappingTasks)}</ul>;
 }
