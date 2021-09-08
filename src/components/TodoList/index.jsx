@@ -3,7 +3,7 @@ import styles from './todoList.module.scss';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-function TodoList ({ tasks, deleteItem }) {
+function TodoList ({ tasks, deleteItem, editItem }) {
   const taskDone = ({ target: { style } }) => {
     style.textDecoration
       ? (style.textDecoration = '')
@@ -12,10 +12,14 @@ function TodoList ({ tasks, deleteItem }) {
 
   const mappingTasks = (el, i) => {
     const deleteTodo = () => deleteItem(i);
+    const editTodo = () => {
+      editItem(el);
+      deleteItem(i);
+    };
     return (
       <li key={i} onClick={taskDone}>
         {el}
-        <button>
+        <button onClick={editTodo}>
           <EditIcon fontSize='small' />
         </button>
         <button onClick={deleteTodo}>

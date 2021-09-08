@@ -27,7 +27,10 @@ function TodoInput ({ getNewTask }) {
         <button type='submit' className={styles.button}>
           Submit
         </button>
-        <ErrorMessage name='task' render={msg => <div className={styles.error}>{msg}</div>} />
+        <ErrorMessage
+          name='task'
+          render={msg => <div className={styles.error}>{msg}</div>}
+        />
       </Form>
     </Formik>
   );
