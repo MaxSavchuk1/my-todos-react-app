@@ -1,12 +1,22 @@
-.itemsList {
-    width: 100%;
-    padding: 15px;
+@import '../../common/styles/templates';
+@import '../../common/styles/vars';
 
-    li {
-        padding: 5px;
-        margin: 5px 0;
-        border: 1px solid black;
-        border-radius: 5px;
-        cursor: pointer;
+.itemsList {
+  width: 100%;
+  padding: 15px;
+
+  li {
+    @extend %flex-container;
+    justify-content: flex-start;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: auto;
+    button:first-child {
+      margin-left: auto;
+      margin-right: 5px;
     }
+  }
 }

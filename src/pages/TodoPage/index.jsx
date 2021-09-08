@@ -11,12 +11,18 @@ function TodoPage () {
     setTasksList([...tasksList, task]);
   };
 
+  const deleteItem = i => {
+    const newTasksList = [...tasksList];
+    newTasksList.splice(i, 1);
+    setTasksList(newTasksList);
+  };
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.todoContainer}>
         <TodoHeader count={tasksList.length} />
         <TodoInput getNewTask={getNewTask} />
-        <TodoList tasks={tasksList} />
+        <TodoList tasks={tasksList} deleteItem={deleteItem} />
       </div>
     </div>
   );
