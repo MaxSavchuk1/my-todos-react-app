@@ -1,6 +1,14 @@
 .themeSwitcher {
+  display: flex;
+  align-items: center;
   position: absolute;
   top: 0;
   right: 0;
   margin: 25px;
+  span {
+    display: block;
+    margin-right: 10px;
+    font-weight: bold;
+    color: blue;
+  }
 }

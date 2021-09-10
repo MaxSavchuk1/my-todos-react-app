@@ -5,13 +5,13 @@ import styles from './ThemeSwitcher.module.scss';
 
 function ThemeSwitcher () {
   const [isLight, setIsLight] = useContext(ThemeContext);
-  console.log(isLight);
 
   const handleChange = () => {
     setIsLight(!isLight);
   };
   return (
     <div className={styles.themeSwitcher}>
+      <span>Theme switch</span>
       <Switch
         checked={isLight}
         onChange={handleChange}
