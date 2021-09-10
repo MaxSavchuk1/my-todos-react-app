@@ -1,39 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import ThemeSwitcher from '../../components/ThemeSwitcher';
-import TodoHeader from '../../components/TodoHeader';
-import TodoInput from '../../components/TodoInput';
-import TodoList from '../../components/TodoList';
 import styles from './TodoPage.module.scss';
+import { ThemeContext } from '../../contexts';
+import classNames from 'classnames';
+import TodoContainer from '../../components/TodoContainer';
 
 function TodoPage () {
-  const [tasksList, setTasksList] = useState([]);
+  const [isLight] = useContext(ThemeContext);
 
-  const getNewTask = task => {
-    setTasksList([...tasksList, task]);
-  };
-
-  const deleteItem = i => {
-    const newTasksList = [...tasksList];
-    newTasksList.splice(i, 1);
-    setTasksList(newTasksList);
-  };
-
-  const editItem = text => {
-    console.log(text); //еще думаю, как реализовать редактирование
-  };
+  const backgroundStyle = classNames(styles.pageContainer, {
+    [styles.lightTheme]: isLight,
+    [styles.darkTheme]: !isLight,
+  });
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={backgroundStyle}>
       <ThemeSwitcher />
-      <div className={styles.todoContainer}>
-        <TodoHeader count={tasksList.length} />
-        <TodoInput getNewTask={getNewTask} />
-        <TodoList
-          tasks={tasksList}
-          deleteItem={deleteItem}
-          editItem={editItem}
-        />
-      </div>
+      <TodoContainer />
     </div>
   );
 }

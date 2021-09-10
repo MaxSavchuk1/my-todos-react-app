@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Switch from 'react-switch';
+import { ThemeContext } from '../../contexts';
 import styles from './ThemeSwitcher.module.scss';
 
 function ThemeSwitcher () {
-  const [checked, setChecked] = useState(true);
+  const [isLight, setIsLight] = useContext(ThemeContext);
+  console.log(isLight);
+
   const handleChange = () => {
-    setChecked(!checked);
+    setIsLight(!isLight);
   };
   return (
     <div className={styles.themeSwitcher}>
       <Switch
-        checked={checked}
+        checked={isLight}
         onChange={handleChange}
         onColor='#c5f6fa'
-        // onHandleColor='#2693e6'
         handleDiameter={30}
         uncheckedIcon={false}
         checkedIcon={false}

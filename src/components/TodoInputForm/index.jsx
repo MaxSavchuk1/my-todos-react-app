@@ -1,9 +1,9 @@
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import React from 'react';
-import styles from './TodoInput.module.scss';
+import styles from './TodoInputForm.module.scss';
 import { TASK_SCHEMA } from '../../utils/validationSchemas';
 
-function TodoInput ({ getNewTask }) {
+function TodoInputForm ({ getNewTask }) {
   const initialValues = { task: '' };
   const submitHandler = ({ task }, formikBag) => {
     getNewTask(task);
@@ -36,4 +36,4 @@ function TodoInput ({ getNewTask }) {
   );
 }
 
-export default TodoInput;
+export default TodoInputForm;

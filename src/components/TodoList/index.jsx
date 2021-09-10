@@ -4,13 +4,13 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 function TodoList ({ tasks, deleteItem, editItem }) {
-  const taskDone = ({ target: { style } }) => {
-    style.textDecoration
-      ? (style.textDecoration = '')
-      : (style.textDecoration = 'line-through');
-  };
-
   const mappingTasks = (el, i) => {
+    const taskDone = ({ target: { style } }) => {
+      style.textDecoration
+        ? (style.textDecoration = '')
+        : (style.textDecoration = 'line-through');
+    };
+
     const deleteTodo = () => deleteItem(i);
     const editTodo = () => {
       editItem(el);

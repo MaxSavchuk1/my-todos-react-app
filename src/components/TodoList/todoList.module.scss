@@ -14,10 +14,15 @@
     border-radius: 5px;
     cursor: pointer;
     overflow: auto;
+    background-color: snow;
 
     button:first-child {
       margin-left: auto;
       margin-right: 5px;
     }
   }
+}
+
+.strikethrough {
+  text-decoration: line-through;
 }
