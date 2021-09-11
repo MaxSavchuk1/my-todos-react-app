@@ -3,11 +3,12 @@ import React from 'react';
 import styles from './TodoInputForm.module.scss';
 import { TASK_SCHEMA } from '../../utils/validationSchemas';
 
-function TodoInputForm ({ getNewTask }) {
-  const initialValues = { task: '' };
+function TodoInputForm ({ getNewTask, itemToEdit, reset }) {
+  const initialValues = { task: itemToEdit };
   const submitHandler = ({ task }, formikBag) => {
     getNewTask(task);
     formikBag.resetForm();
+    reset('');
   };
 
   return (

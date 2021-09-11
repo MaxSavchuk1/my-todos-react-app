@@ -3,9 +3,9 @@ import { ThemeContext } from './contexts';
 import { useState } from 'react';
 
 function App () {
-  const themes = useState(true);
+  const isLightTheme = useState(true);
   return (
-    <ThemeContext.Provider value={themes}>
+    <ThemeContext.Provider value={isLightTheme}>
       <TodoPage />
     </ThemeContext.Provider>
   );
