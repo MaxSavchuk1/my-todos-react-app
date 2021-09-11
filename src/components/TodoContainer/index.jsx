@@ -13,10 +13,11 @@ function TodoContainer () {
     [styles.todoContainer]: isLight,
     [styles.todoContainerDark]: !isLight,
   });
+
   const [tasksList, setTasksList] = useState([]);
 
   const getNewTask = task => {
-    setTasksList([...tasksList, task]);
+    setTasksList([...tasksList, { value: task, id: Date.now() }]);
   };
 
   const deleteItem = i => {

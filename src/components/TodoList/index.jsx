@@ -4,7 +4,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 function TodoList ({ tasks, deleteItem, editItem }) {
-  const mappingTasks = (el, i) => {
+  const mappingTasks = ({ value, id }, i) => {
     const taskDone = ({ target: { style } }) => {
       style.textDecoration
         ? (style.textDecoration = '')
@@ -13,12 +13,12 @@ function TodoList ({ tasks, deleteItem, editItem }) {
 
     const deleteTodo = () => deleteItem(i);
     const editTodo = () => {
-      editItem(el);
+      editItem(value);
       deleteItem(i);
     };
     return (
-      <li key={i} onClick={taskDone}>
-        {el}
+      <li key={id} onClick={taskDone}>
+        {value}
         <button onClick={editTodo}>
           <EditIcon fontSize='small' />
         </button>
@@ -28,7 +28,6 @@ function TodoList ({ tasks, deleteItem, editItem }) {
       </li>
     );
   };
-
   return <ul className={styles.itemsList}>{tasks.map(mappingTasks)}</ul>;
 }
 
