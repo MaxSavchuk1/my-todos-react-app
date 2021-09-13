@@ -31,26 +31,24 @@ function TodoContainer () {
     setItemToEdit(text);
   };
 
-  // что-то мне подсказывет, что можно сделать редактирование по-другому... например через компоненты высшего порядка :)
-
   return (
     <div className={dynamicStyle}>
       <TodoHeader count={tasksList.length} />
-      {!itemToEdit && (
-        <TodoInputForm
-          getNewTask={getNewTask}
-          itemToEdit={''}
-          reset={setItemToEdit}
-        />
-      )}
+      <TodoInputForm
+        getNewTask={getNewTask}
+        itemToEdit={''}
+        reset={setItemToEdit}
+      />
       {itemToEdit && (
-        <TodoInputForm
-          getNewTask={getNewTask}
-          itemToEdit={itemToEdit}
-          reset={setItemToEdit}
-        />
+        <div className={styles.editTask}>
+          <TodoInputForm
+            getNewTask={getNewTask}
+            itemToEdit={itemToEdit}
+            reset={setItemToEdit}
+          />
+          <span>EDIT YOUR TASK</span>
+        </div>
       )}
-
       <TodoList tasks={tasksList} deleteItem={deleteItem} editItem={editItem} />
     </div>
   );
